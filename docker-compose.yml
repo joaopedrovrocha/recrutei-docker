@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  back:
+    build: ./recrutei-backend
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./recrutei-backend:/usr/app
+  
+  front:
+    build: ./recrutei-frontend
+    command: npm start
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./recrutei-frontend:/usr/app
